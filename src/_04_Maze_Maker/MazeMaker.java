@@ -62,7 +62,7 @@ public class MazeMaker {
 				
 			currentCell= uncheckedCells.pop();
 		// D1a. pop a cell from the stack
-
+			
 		// D1b. make that the current cell
 			
 		// D1c. call the selectNextPath method with the current cell
@@ -99,16 +99,16 @@ public class MazeMaker {
 	private static ArrayList<Cell> getUnvisitedNeighbors(Cell c) {
 		ArrayList<Cell> unvisitedNeighbors = new ArrayList<Cell>();
 		if(c.getX()<width-1&&!maze.getCell(c.getX()+1, c.getY()).hasBeenVisited()) {
-			unvisitedNeighbors.add(c);
+			unvisitedNeighbors.add(maze.getCell(c.getX()+1, c.getY()));
 		}
 		if(c.getX()>=1&&!maze.getCell(c.getX()-1, c.getY()).hasBeenVisited()) {
-			unvisitedNeighbors.add(c);
+			unvisitedNeighbors.add(maze.getCell(c.getX()-1, c.getY()));
 		}
 		if(c.getY()<height-1&&!maze.getCell(c.getX(), c.getY()+1).hasBeenVisited()) {
-			unvisitedNeighbors.add(c);
+			unvisitedNeighbors.add(maze.getCell(c.getX(), c.getY()+1));
 		}
 		if(c.getY()>=1&&!maze.getCell(c.getX(), c.getY()-1).hasBeenVisited()) {
-			unvisitedNeighbors.add(c);
+			unvisitedNeighbors.add(maze.getCell(c.getX(), c.getY()-1));
 		}
 		
 		return unvisitedNeighbors;
